@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+class courseDictionary: ObservableObject
+{
+    @Published var list:[courseRecord] = [courseRecord]();
+    let calendar = Calendar.current
+    
+    init() {
+        
+    }
+}
