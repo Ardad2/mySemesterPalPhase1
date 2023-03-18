@@ -35,6 +35,29 @@ struct courseDetails: View {
             }
         VStack(){
             Text(courseData.get_course(courseName).get_class_name());
+            Text(courseData.get_course(courseName).get_room_name());
+            
+            List {
+                Section()
+                {
+                    ForEach(taskData.list)
+                    {
+                        datum in
+                        Group{
+                            if (datum.get_class_name() == courseName) {
+                                VStack()
+                                {
+                                    HStack {
+                                        Text(datum.get_task_name());
+                                        Spacer();
+                                    }
+                                }
+                            }
+                        }
+        
+                    }
+                }
+            }
         }
     }
     }
