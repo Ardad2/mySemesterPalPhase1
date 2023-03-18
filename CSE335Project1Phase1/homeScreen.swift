@@ -14,6 +14,7 @@ struct homeScreen: View {
     @State private var enteredPassword: String = ""
     
     @StateObject var courseData:courseDictionary = courseDictionary();
+    @StateObject var taskData:taskDictionary = taskDictionary();
 
     
     var body: some View {
@@ -47,7 +48,7 @@ struct homeScreen: View {
             VStack {
                     VStack {
                         Text("Welcome back John")
-                        Text("Your next class is in 3 hours")
+                        Text("Your next class is in [Not implemented yet] hours")
 
                         List {
                             Section(header: ListHeader())

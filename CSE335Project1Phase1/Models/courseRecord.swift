@@ -15,7 +15,6 @@ class courseRecord: Identifiable
     var days = [0, 0, 0, 0, 0, 0, 0];
     var startTime:Int? = nil;
     var endTime: Int? = nil;
-    var taskList: taskDictionary;
     
     init(className:String, roomName:String, days:[Int], startTime:Int, endTime:Int)
     {
@@ -24,7 +23,6 @@ class courseRecord: Identifiable
         self.days = days;
         self.startTime = startTime;
         self.endTime = endTime;
-        self.taskList = taskDictionary()
     }
     
     //Change

@@ -12,6 +12,8 @@ struct loginScreen: View {
     @State private var enteredPassword: String = ""
     
     @StateObject var courseData:courseDictionary = courseDictionary();
+    @StateObject var taskData:taskDictionary = taskDictionary();
+
     
     var body: some View {
         NavigationView {
@@ -37,7 +39,7 @@ struct loginScreen: View {
                         TextField("Enter password", text: $enteredPassword)
                         Text("Reset Password").frame(maxWidth: .infinity, alignment: .trailing)
                         NavigationLink(
-                            destination: homeScreen(courseData: courseData
+                            destination: homeScreen(courseData: courseData, taskData: taskData
                             ),
                             label: {
                                 Text("Sign In")
