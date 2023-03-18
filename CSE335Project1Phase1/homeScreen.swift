@@ -13,6 +13,9 @@ struct homeScreen: View {
     @State private var enteredUsername: String = ""
     @State private var enteredPassword: String = ""
     
+    @StateObject var courseData:courseDictionary = courseDictionary();
+
+    
     var body: some View {
         NavigationView {
             Text("")
@@ -37,7 +40,7 @@ struct homeScreen: View {
                             Text("Settings")
                         }
                     }
-            )            
+            )
         }.navigationBarHidden(true)
 
         VStack {
@@ -46,7 +49,21 @@ struct homeScreen: View {
                         Text("Welcome back John")
                         Text("Your next class is in 3 hours")
 
-                        
+                        List {
+                            Section(header: ListHeader())
+                            {
+                                ForEach(courseData.list)
+                                {
+                                    datum in VStack()
+                                    {
+                                        HStack {
+                                            Text(datum.get_class_name());
+                                            Spacer();
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
 
             }
@@ -58,5 +75,13 @@ struct homeScreen: View {
 struct homeScreen_Previews: PreviewProvider {
     static var previews: some View {
         homeScreen()
+    }
+}
+
+struct ListHeader: View {
+    var body: some View {
+        HStack {
+            Text("TASK LIST ")
+        }
     }
 }

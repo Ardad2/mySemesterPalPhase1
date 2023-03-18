@@ -32,6 +32,6 @@ class courseDictionary: ObservableObject
     {
         list.append(courseRecord(className:givenClassName, roomName:givenRoomName, days:givenDays, startTime:givenStartTime, endTime:givenEndTime));
         
-        let list = list.sorted(by: {$0.startTime! < $1.startTime!})
+        list = list.sorted(by: {$0.startTime! < $1.startTime!})
     }
 }

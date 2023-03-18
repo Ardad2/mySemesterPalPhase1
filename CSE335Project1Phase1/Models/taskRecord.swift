@@ -16,7 +16,7 @@ class taskRecord: Identifiable
     var className:String? = nil;
     var dueDate:Date? = nil;
     var dueTime:Int? = nil;
-    
+
     init(taskName:String, className:String, dueDate:Date, dueTime:Int)
     {
         self.mark = false;
@@ -70,9 +70,9 @@ class taskRecord: Identifiable
         return result;
     }
     
-    func get_due_time()
+    func get_due_time() -> Int
     {
-        return self.dueTime
+        return self.dueTime!
     }
     
     

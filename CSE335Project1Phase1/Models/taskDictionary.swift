@@ -32,6 +32,6 @@ class taskDictionary: ObservableObject
     {
         list.append(taskRecord(taskName: givenTaskName, className: givenClassName, dueDate: givenDueDate, dueTime: givenDueTime));
         
-        let list = list.sorted(by: {{lhs, rhs} in if lhs.dueDate == rhs.dueDate})
+       // let list = list.sorted(by: {{lhs, rhs} in if lhs.dueDate == rhs.dueDate})
     }
 }
