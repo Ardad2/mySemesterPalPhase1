@@ -14,41 +14,44 @@ struct homeScreen: View {
     @State private var enteredPassword: String = ""
     
     var body: some View {
+        NavigationView {
+            Text("")
+
+            .navigationBarItems(leading:
+                HStack {
+                    Button(action: {
+                        print("Apple button tapped!")
+                    }) {
+                        Text("John")
+                    }.padding()
+
+                    Button("View Courses") {
+                        print("View Courses button tapped!")
+                    }
+
+                }, trailing:
+                    HStack {
+                        Button(action: {
+                            print("Settings button tapped!")
+                        }) {
+                            Text("Settings")
+                        }
+                    }
+            )            
+        }.navigationBarHidden(true)
+
         VStack {
             VStack {
                     VStack {
-                        TextField("Enter username", text: $enteredUsername)
-                        TextField("Enter password", text: $enteredPassword)
-                        Text("Reset Password").frame(maxWidth: .infinity, alignment: .trailing)
-                        NavigationLink(
-                            destination: homeScreen(
-                            ),
-                            label: {
-                                Text("Sign In")
-                            }).buttonStyle(.borderedProminent)
-                            .navigationTitle("Home")
-                            .navigationBarTitleDisplayMode(.inline)
-                            .navigationBarHidden(true)
-                        
-                        
-                        Text("Don't have an Account?").frame(maxWidth: .infinity, alignment: .trailing)
-                        NavigationLink(
-                            destination: homeScreen(
-                            ),
-                            label: {
-                                Text("Register")
-                            }).buttonStyle(.borderedProminent)
-                            .navigationTitle("Home")
-                            .navigationBarTitleDisplayMode(.inline)
-                            .navigationBarHidden(true)
-                        
+                        Text("Welcome back John")
+                        Text("Your next class is in 3 hours")
 
                         
                     }
 
             }
         }
-        .padding()
+
     }
 }
 
