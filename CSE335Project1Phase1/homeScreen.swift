@@ -61,7 +61,7 @@ struct homeScreen: View {
                             {
                                 ForEach(taskData.list)
                                 {
-                                    datum in VStack()
+                                    datum in NavigationLink(destination: taskDetails(courseName: datum.get_class_name(), taskName:datum.get_task_name(), courseData: courseData, taskData: taskData)){VStack()
                                     {
                                         HStack {
                                             Text(datum.get_task_name());
@@ -70,6 +70,7 @@ struct homeScreen: View {
                                             Spacer();
                                         }
                                     }
+                                }
                                 }
                             }
                         }

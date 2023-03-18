@@ -47,5 +47,16 @@ class taskDictionary: ObservableObject
             return lhs.get_due_date() < rhs.get_due_date()
         }
     }
+    func get_task(_ givenTaskName:String, _ givenCourseName:String) -> taskRecord
+    {
+        for tasks in list
+        {
+            if ( (tasks.get_class_name() == givenCourseName) && (tasks.get_task_name() == givenTaskName) )
+            {
+                return tasks;
+            }
+        }
+        return taskRecord(taskName: "F", className: "F", dueDate: Calendar.current.date(byAdding: .hour, value: +1, to: Date())!);
+    }
 
 }

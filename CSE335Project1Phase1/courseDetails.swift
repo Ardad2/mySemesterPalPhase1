@@ -38,13 +38,14 @@ struct courseDetails: View {
             Text(courseData.get_course(courseName).get_room_name());
             
             List {
-                Section()
+                Section(header: ListHeader2())
                 {
                     ForEach(taskData.list)
                     {
                         datum in
                         Group{
                             if (datum.get_class_name() == courseName) {
+                                NavigationLink(destination: taskDetails(courseName: courseName, taskName:datum.get_task_name(), courseData: courseData, taskData: taskData)){
                                 VStack()
                                 {
                                     HStack {
@@ -52,6 +53,7 @@ struct courseDetails: View {
                                         Spacer();
                                     }
                                 }
+                            }
                             }
                         }
         
@@ -68,3 +70,12 @@ struct courseDetails: View {
         courseDetails(picture:"Hi", name:"Hi", description:"A")
     }
 }*/
+
+struct ListHeader2: View {
+    var body: some View {
+        HStack {
+            Text("TASK LIST ")
+        }
+    }
+}
+

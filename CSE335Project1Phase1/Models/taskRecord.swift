@@ -41,6 +41,11 @@ class taskRecord: Identifiable
         }
     }
     
+    func get_mark() -> Bool
+    {
+        return self.mark;
+    }
+    
     func get_task_name() -> String
     {
         return self.taskName!
