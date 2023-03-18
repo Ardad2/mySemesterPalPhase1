@@ -43,13 +43,14 @@ struct myCourses: View {
                             {
                                 ForEach(courseData.list)
                                 {
-                                    datum in VStack()
+                                    datum in NavigationLink(destination: courseDetails(courseName: datum.get_class_name(), courseData: courseData, taskData: taskData)){VStack()
                                     {
                                         HStack {
                                             Text(datum.get_class_name());
                                             Spacer();
                                         }
                                     }
+                                }
                                 }
                             }
                         }

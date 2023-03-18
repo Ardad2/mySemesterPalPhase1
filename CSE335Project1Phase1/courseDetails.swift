@@ -34,7 +34,7 @@ struct courseDetails: View {
 
             }
         VStack(){
-            Text(courseData.get_course(courseName)!.get_class_name());
+            Text(courseData.get_course(courseName).get_class_name());
         }
     }
     }

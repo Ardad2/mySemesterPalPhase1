@@ -35,7 +35,7 @@ class courseDictionary: ObservableObject
         list = list.sorted(by: {$0.startTime! < $1.startTime!})
     }
     
-    func get_course(_ givenCourseName:String) -> courseRecord?
+    func get_course(_ givenCourseName:String) -> courseRecord
     {
         for courses in list
         {
@@ -44,6 +44,6 @@ class courseDictionary: ObservableObject
                 return courses;
             }
         }
-        return nil;
+        return courseRecord(className: "F", roomName: "F", days: [0,0,0,0,0,0,0], startTime: 31, endTime: 42);
     }
 }
