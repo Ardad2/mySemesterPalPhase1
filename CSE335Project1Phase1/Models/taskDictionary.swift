@@ -7,6 +7,15 @@
 
 import Foundation
 
+func isSameDay(date1: Date, date2: Date) -> Bool {
+    let diff = Calendar.current.dateComponents([.day], from: date1, to: date2)
+    if diff.day == 0 {
+        return true
+    } else {
+        return false
+    }
+}
+
 class taskDictionary: ObservableObject
 {
     @Published var list:[taskRecord] = [taskRecord]();
@@ -35,7 +44,7 @@ class taskDictionary: ObservableObject
         //let list = list.sorted(by: {{lhs, rhs} in if lhs.dueDate == rhs.dueDate})
         
         list = list.sorted { (lhs, rhs) in
-            if lhs.get_due_date() == rhs.get_due_date()
+            if isSameDay(date1: lhs.get_due_date(), date2: rhs.get_due_date())
             {
                 return lhs.get_due_time() < rhs.get_due_time()
             }
