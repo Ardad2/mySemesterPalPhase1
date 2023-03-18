@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct CSE335Project1Phase1App: App {
+    
     var body: some Scene {
         WindowGroup {
-            login_screen()
+            loginScreen()
         }
     }
 }

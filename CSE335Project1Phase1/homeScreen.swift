@@ -1,9 +1,11 @@
 //
-//  loginScreen.swift
+//  homeScreen.swift
 //  CSE335Project1Phase1
 //
 //  Created by Arjun Dadhwal on 3/14/23.
 //
+
+import foundation
 
 import SwiftUI
 
