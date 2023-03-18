@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		82BBC2F129C134EA000C2053 /* CSE335Project1Phase1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BBC2F029C134EA000C2053 /* CSE335Project1Phase1App.swift */; };
-		82BBC2F329C134EA000C2053 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BBC2F229C134EA000C2053 /* ContentView.swift */; };
+		82BBC2F329C134EA000C2053 /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BBC2F229C134EA000C2053 /* loginScreen.swift */; };
 		82BBC2F529C134EB000C2053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82BBC2F429C134EB000C2053 /* Assets.xcassets */; };
 		82BBC2F829C134EB000C2053 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82BBC2F729C134EB000C2053 /* Preview Assets.xcassets */; };
 		82BBC30229C134EB000C2053 /* CSE335Project1Phase1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BBC30129C134EB000C2053 /* CSE335Project1Phase1Tests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		82BBC2ED29C134EA000C2053 /* CSE335Project1Phase1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE335Project1Phase1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82BBC2F029C134EA000C2053 /* CSE335Project1Phase1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE335Project1Phase1App.swift; sourceTree = "<group>"; };
-		82BBC2F229C134EA000C2053 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		82BBC2F229C134EA000C2053 /* loginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
 		82BBC2F429C134EB000C2053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82BBC2F729C134EB000C2053 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82BBC2FD29C134EB000C2053 /* CSE335Project1Phase1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSE335Project1Phase1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				82BBC2F029C134EA000C2053 /* CSE335Project1Phase1App.swift */,
-				82BBC2F229C134EA000C2053 /* ContentView.swift */,
+				82BBC2F229C134EA000C2053 /* loginScreen.swift */,
 				82BBC2F429C134EB000C2053 /* Assets.xcassets */,
 				82BBC2F629C134EB000C2053 /* Preview Content */,
 			);
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82BBC2F329C134EA000C2053 /* ContentView.swift in Sources */,
+				82BBC2F329C134EA000C2053 /* loginScreen.swift in Sources */,
 				82BBC2F129C134EA000C2053 /* CSE335Project1Phase1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
