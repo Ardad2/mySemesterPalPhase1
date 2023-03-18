@@ -5,11 +5,11 @@
 //  Created by Arjun Dadhwal on 3/14/23.
 //
 
-import foundation
+import Foundation
 
 import SwiftUI
 
-struct loginScreen: View {
+struct homeScreen: View {
     @State private var enteredUsername: String = ""
     @State private var enteredPassword: String = ""
     
@@ -21,7 +21,7 @@ struct loginScreen: View {
                         TextField("Enter password", text: $enteredPassword)
                         Text("Reset Password").frame(maxWidth: .infinity, alignment: .trailing)
                         NavigationLink(
-                            destination: loginScreen(
+                            destination: homeScreen(
                             ),
                             label: {
                                 Text("Sign In")
@@ -33,7 +33,7 @@ struct loginScreen: View {
                         
                         Text("Don't have an Account?").frame(maxWidth: .infinity, alignment: .trailing)
                         NavigationLink(
-                            destination: loginScreen(
+                            destination: homeScreen(
                             ),
                             label: {
                                 Text("Register")
@@ -52,8 +52,8 @@ struct loginScreen: View {
     }
 }
 
-struct loginScreen_Previews: PreviewProvider {
+struct homeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        loginScreen()
+        homeScreen()
     }
 }

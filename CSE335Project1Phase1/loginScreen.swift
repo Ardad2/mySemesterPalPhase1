@@ -12,14 +12,14 @@ struct loginScreen: View {
     @State private var enteredPassword: String = ""
     
     var body: some View {
-        VStack {
+        NavigationView {
             VStack {
                     VStack {
                         TextField("Enter username", text: $enteredUsername)
                         TextField("Enter password", text: $enteredPassword)
                         Text("Reset Password").frame(maxWidth: .infinity, alignment: .trailing)
                         NavigationLink(
-                            destination: loginScreen(
+                            destination: homeScreen(
                             ),
                             label: {
                                 Text("Sign In")
