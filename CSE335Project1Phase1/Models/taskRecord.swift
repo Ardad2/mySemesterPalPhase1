@@ -17,9 +17,9 @@ class taskRecord: Identifiable
     var dueDate:Date;
     var dueTime:Int;
     
-    init(mark:Bool, taskName:String, className:String, dueDate:Date, dueTime:Int)
+    init(taskName:String, className:String, dueDate:Date, dueTime:Int)
     {
-        self.mark = mark;
+        self.mark = false;
         self.taskName = taskName;
         self.className = className;
         self.dueDate = dueDate;
