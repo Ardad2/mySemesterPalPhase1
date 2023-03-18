@@ -34,4 +34,16 @@ class courseDictionary: ObservableObject
         
         list = list.sorted(by: {$0.startTime! < $1.startTime!})
     }
+    
+    func get_course(_ givenCourseName:String) -> courseRecord?
+    {
+        for courses in list
+        {
+            if (courses.get_class_name() == givenCourseName)
+            {
+                return courses;
+            }
+        }
+        return nil;
+    }
 }
