@@ -24,8 +24,10 @@ struct loginScreen: View {
 
                     //Add the days in reverse order
 
-                    courseData.add_course("CSE340", "Design North 60", [1, 0, 1, 0, 0, 0, 0], 990, 1065)
-                    courseData.add_course("CSE335", "Design North 60", [1, 0, 1, 0, 0, 0, 0], 600, 1065)
+                    courseData.add_course("CSE 340", "Design North 60", [1, 0, 1, 0, 0, 0, 0], 990, 1065)
+                    courseData.add_course("CSE 335", "Design North 60", [1, 0, 1, 0, 0, 0, 0], 600, 1065)
+                    
+                    taskData.add_task("Project 2", "CSE 340", Calendar.current.date(byAdding: .hour, value: -0, to: Date())!, 1439)
 
 
     
