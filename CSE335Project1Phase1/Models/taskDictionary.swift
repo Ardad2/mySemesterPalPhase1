@@ -37,18 +37,13 @@ class taskDictionary: ObservableObject
     
     //ADD A COURSE
     
-    func add_task( _ givenTaskName:String, _ givenClassName:String, _ givenDueDate: Date, _ givenDueTime:Int)
+    func add_task( _ givenTaskName:String, _ givenClassName:String, _ givenDueDate: Date)
     {
-        list.append(taskRecord(taskName: givenTaskName, className: givenClassName, dueDate: givenDueDate, dueTime: givenDueTime));
+        list.append(taskRecord(taskName: givenTaskName, className: givenClassName, dueDate: givenDueDate))
         
         //let list = list.sorted(by: {{lhs, rhs} in if lhs.dueDate == rhs.dueDate})
         
         list = list.sorted { (lhs, rhs) in
-            if isSameDay(date1: lhs.get_due_date(), date2: rhs.get_due_date())
-            {
-                return lhs.get_due_time() < rhs.get_due_time()
-            }
-            
             return lhs.get_due_date() < rhs.get_due_date()
         }
     }

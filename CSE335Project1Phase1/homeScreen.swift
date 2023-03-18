@@ -60,6 +60,7 @@ struct homeScreen: View {
                                         HStack {
                                             Text(datum.get_task_name());
                                             Text(datum.get_class_name());
+                                            
                                             Text(String(datum.get_due_time()));
                                             Spacer();
                                         }
