@@ -56,6 +56,14 @@ class taskRecord: Identifiable
         return self.dueDate!;
     }
     
+    func get_due_date_string() -> String
+    {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm E, d MMM y"
+        return (formatter.string(from: self.dueDate!))
+
+    }
+    
 
     
     //Mark, Task Name, courseName, dueDate, duetime,

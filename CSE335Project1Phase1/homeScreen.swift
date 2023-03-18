@@ -19,32 +19,38 @@ struct homeScreen: View {
     
     var body: some View {
         NavigationView {
-            Text("")
 
-            .navigationBarItems(leading:
-                HStack {
-                    Button(action: {
-                        print("Apple button tapped!")
-                    }) {
-                        Text("John")
-                    }.padding()
-
-                    Button("View Courses") {
-                        print("View Courses button tapped!")
-                    }
-
-                }, trailing:
-                    HStack {
-                        Button(action: {
-                            print("Settings button tapped!")
-                        }) {
-                            Text("Settings")
-                        }
-                    }
-            )
-        }.navigationBarHidden(true)
 
         VStack {
+            HStack {
+                NavigationLink(
+                    destination: myCourses(courseData: courseData, taskData: taskData
+                    ),
+                    label: {
+                        Text("John")
+                    }).buttonStyle(.borderedProminent)
+                    .navigationTitle("Home")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarHidden(true)
+                NavigationLink(
+                    destination: myCourses(courseData: courseData, taskData: taskData
+                                          ),
+                    label: {
+                        Text("View Courses")
+                    }).buttonStyle(.borderedProminent)
+                    .navigationTitle("Home")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarHidden(true)
+                NavigationLink(
+                    destination: myCourses(courseData: courseData, taskData: taskData
+                    ),
+                    label: {
+                        Text("Settings")
+                    }).buttonStyle(.borderedProminent)
+                    .navigationTitle("Home")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarHidden(true)
+            }
             VStack {
                     VStack {
                         Text("Welcome back John")
@@ -60,8 +66,7 @@ struct homeScreen: View {
                                         HStack {
                                             Text(datum.get_task_name());
                                             Text(datum.get_class_name());
-                                            
-                                            Text(String(datum.get_due_time()));
+                                            Text(datum.get_due_date_string())
                                             Spacer();
                                         }
                                     }
@@ -72,6 +77,7 @@ struct homeScreen: View {
 
             }
         }
+    }.navigationBarHidden(true)
 
     }
 }

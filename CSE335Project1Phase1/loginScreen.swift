@@ -27,8 +27,8 @@ struct loginScreen: View {
                     courseData.add_course("CSE 340", "Design North 60", [1, 0, 1, 0, 0, 0, 0], 990, 1065)
                     courseData.add_course("CSE 335", "Design North 60", [1, 0, 1, 0, 0, 0, 0], 600, 1065)
                     
-                    taskData.add_task("Project 2", "CSE 340", Calendar.current.date(byAdding: .hour, value: -0, to: Date())!, 1439)
-                    taskData.add_task("Homework 2", "CSE 340", Calendar.current.date(byAdding: .hour, value: -0, to: Date())!, 1000)
+                    taskData.add_task("Project 2", "CSE 340", Calendar.current.date(byAdding: .hour, value: -4, to: Date())!)
+                    taskData.add_task("Homework 2", "CSE 340", Calendar.current.date(byAdding: .hour, value: -0, to: Date())!)
 
 
     
