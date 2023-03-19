@@ -46,4 +46,9 @@ class courseDictionary: ObservableObject
         }
         return courseRecord(className: "F", roomName: "F", days: [0,0,0,0,0,0,0], startTime: Calendar.current.date(byAdding: .hour, value: +1, to: Date())!, endTime: Calendar.current.date(byAdding: .hour, value: +2, to: Date())!);
     }
+    
+    func edit_course( _ courseName:String, _ newClassName:String, _ newRoomName:String, _ newDays:[Int], _ newStartTime:Date, _ newEndTime:Date)
+    {
+        get_course(courseName).change_record(newClassName: newClassName, newRoomName: newRoomName, newDays: newDays, newStartTime: newStartTime, newEndTime: newEndTime)
+    }
 }
