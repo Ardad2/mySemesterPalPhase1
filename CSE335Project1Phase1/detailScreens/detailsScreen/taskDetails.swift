@@ -46,6 +46,25 @@ struct taskDetails: View {
                 Text("NOT DONE");
             }
             
+            /*
+             @StateObject var courseData:courseDictionary = courseDictionary();
+             @StateObject var taskData:taskDictionary = taskDictionary();
+             
+             @State var prevTaskName:String;
+             @State var newTaskName:String;
+             @State var courseName:String;
+             @State var newDueDate:Date;
+        
+             */
+            
+            NavigationLink(
+                destination: editTask(courseData: courseData, taskData: taskData, prevTaskName: taskName, newTaskName: taskName, courseName: courseName, newDueDate: taskData.get_task(taskName, courseName).get_due_date()),
+                label: {
+                    Text("Edit Task")
+                }).buttonStyle(.borderedProminent)
+                .navigationTitle("Home")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarHidden(true)
         }
     }
     }

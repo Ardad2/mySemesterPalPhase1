@@ -69,5 +69,16 @@ class taskDictionary: ObservableObject
             }
         }
     }
+    
+    func edit_task( _ givenTaskName:String, _ newTaskName:String, _ newDueDate:Date)
+    {
+        for task in list
+        {
+            if (task.get_task_name() == givenTaskName)
+            {
+                task.change_task(newTaskName:newTaskName, newDueDate: newDueDate)
+            }
+        }
+    }
 
 }
