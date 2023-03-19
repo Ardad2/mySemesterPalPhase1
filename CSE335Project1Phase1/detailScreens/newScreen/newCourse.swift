@@ -113,6 +113,35 @@ struct newCourse: View {
             }
                 
                 Button(action: {
+                    if (onMonday)
+                    {
+                        days[0] = 1;
+                    }
+                    if (onTuesday)
+                    {
+                        days[1] = 1;
+                    }
+                    if (onWednesday)
+                    {
+                        days[2] = 1;
+                    }
+                    if (onThursday)
+                    {
+                        days[3] = 1;
+                    }
+                    if (onFriday)
+                    {
+                        days[4] = 1;
+                    }
+                    if (onSaturday)
+                    {
+                        days[5] = 1;
+                    }
+                    if (onSunday)
+                    {
+                        days[6] = 1;
+                    }
+                    
                     courseData.add_course(newCourseName, newRoomName, days, startTime, endTime)
                 }) {
                     
