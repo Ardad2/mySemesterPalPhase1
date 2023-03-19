@@ -34,6 +34,14 @@ struct courseDetails: View {
 
             }
         VStack(){
+            NavigationLink(
+                destination: newTask(courseData: courseData, taskData: taskData, courseName: self.courseName),
+                label: {
+                    Text("Add New Task")
+                }).buttonStyle(.borderedProminent)
+                .navigationTitle("Home")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarHidden(true)
             Text(courseData.get_course(courseName).get_class_name());
             Text(courseData.get_course(courseName).get_room_name());
             List {
