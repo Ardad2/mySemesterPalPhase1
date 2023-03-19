@@ -51,4 +51,9 @@ class courseDictionary: ObservableObject
     {
         get_course(courseName).change_record(newClassName: newClassName, newRoomName: newRoomName, newDays: newDays, newStartTime: newStartTime, newEndTime: newEndTime)
     }
+    
+    func delete_course(_ givenCourseName:String)
+    {
+        list = list.filter {$0.get_class_name() != givenCourseName}
+    }
 }
