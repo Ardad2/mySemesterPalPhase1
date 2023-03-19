@@ -13,10 +13,10 @@ class courseRecord: Identifiable
     var className:String? = nil;
     var roomName:String? = nil;
     var days = [0, 0, 0, 0, 0, 0, 0];
-    var startTime:Int? = nil;
-    var endTime: Int? = nil;
+    var startTime:Date? = nil;
+    var endTime: Date? = nil;
     
-    init(className:String, roomName:String, days:[Int], startTime:Int, endTime:Int)
+    init(className:String, roomName:String, days:[Int], startTime:Date, endTime:Date)
     {
         self.className = className;
         self.roomName = roomName;
@@ -27,7 +27,7 @@ class courseRecord: Identifiable
     
     //Change
     
-    func change_record(newClassName:String, newRoomName:String, newDays:[Int], newStartTime:Int, newEndTime:Int)
+    func change_record(newClassName:String, newRoomName:String, newDays:[Int], newStartTime:Date, newEndTime:Date)
     {
         self.className = newClassName;
         self.roomName = newRoomName;
@@ -50,12 +50,24 @@ class courseRecord: Identifiable
         return self.days;
     }
     
-    func get_start_time() -> Int {
+    func get_start_time() -> Date {
         return self.startTime!
     }
     
-    func get_end_time() -> Int {
+    func get_end_time() -> Date {
         return self.endTime!;
+    }
+    
+    func get_start_time_string() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return (formatter.string(from: self.startTime!))
+    }
+
+    func get_end_time_string() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return (formatter.string(from: self.endTime!))
     }
     
     

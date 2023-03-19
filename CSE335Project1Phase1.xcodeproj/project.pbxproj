@@ -22,6 +22,10 @@
 		82BBC32629C5BF7D000C2053 /* courseDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BBC32529C5BF7D000C2053 /* courseDictionary.swift */; };
 		82BBC32829C5BF85000C2053 /* taskDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BBC32729C5BF85000C2053 /* taskDictionary.swift */; };
 		82BBC32A29C5D151000C2053 /* taskDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BBC32929C5D151000C2053 /* taskDetails.swift */; };
+		82BBC32D29C678F2000C2053 /* newCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BBC32C29C678F2000C2053 /* newCourse.swift */; };
+		82BBC32F29C67922000C2053 /* newTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BBC32E29C67922000C2053 /* newTask.swift */; };
+		82BBC33129C67938000C2053 /* editCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BBC33029C67938000C2053 /* editCourse.swift */; };
+		82BBC33329C6793F000C2053 /* editTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BBC33229C6793F000C2053 /* editTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		82BBC32529C5BF7D000C2053 /* courseDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseDictionary.swift; sourceTree = "<group>"; };
 		82BBC32729C5BF85000C2053 /* taskDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskDictionary.swift; sourceTree = "<group>"; };
 		82BBC32929C5D151000C2053 /* taskDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskDetails.swift; sourceTree = "<group>"; };
+		82BBC32C29C678F2000C2053 /* newCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newCourse.swift; sourceTree = "<group>"; };
+		82BBC32E29C67922000C2053 /* newTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTask.swift; sourceTree = "<group>"; };
+		82BBC33029C67938000C2053 /* editCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editCourse.swift; sourceTree = "<group>"; };
+		82BBC33229C6793F000C2053 /* editTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,13 +118,12 @@
 		82BBC2EF29C134EA000C2053 /* CSE335Project1Phase1 */ = {
 			isa = PBXGroup;
 			children = (
+				82BBC32B29C678D7000C2053 /* detailScreens */,
 				82BBC32029C5BEEE000C2053 /* Models */,
 				82BBC2F029C134EA000C2053 /* CSE335Project1Phase1App.swift */,
 				82BBC31A29C5B6E7000C2053 /* homeScreen.swift */,
 				82BBC2F229C134EA000C2053 /* loginScreen.swift */,
 				82BBC31C29C5B702000C2053 /* myCourses.swift */,
-				82BBC31E29C5B71D000C2053 /* courseDetails.swift */,
-				82BBC32929C5D151000C2053 /* taskDetails.swift */,
 				82BBC2F429C134EB000C2053 /* Assets.xcassets */,
 				82BBC2F629C134EB000C2053 /* Preview Content */,
 			);
@@ -157,6 +164,43 @@
 				82BBC32729C5BF85000C2053 /* taskDictionary.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		82BBC32B29C678D7000C2053 /* detailScreens */ = {
+			isa = PBXGroup;
+			children = (
+				82BBC33629C679B1000C2053 /* editScreen */,
+				82BBC33529C6799F000C2053 /* newScreen */,
+				82BBC33429C67986000C2053 /* detailsScreen */,
+			);
+			path = detailScreens;
+			sourceTree = "<group>";
+		};
+		82BBC33429C67986000C2053 /* detailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				82BBC31E29C5B71D000C2053 /* courseDetails.swift */,
+				82BBC32929C5D151000C2053 /* taskDetails.swift */,
+			);
+			path = detailsScreen;
+			sourceTree = "<group>";
+		};
+		82BBC33529C6799F000C2053 /* newScreen */ = {
+			isa = PBXGroup;
+			children = (
+				82BBC32C29C678F2000C2053 /* newCourse.swift */,
+				82BBC32E29C67922000C2053 /* newTask.swift */,
+			);
+			path = newScreen;
+			sourceTree = "<group>";
+		};
+		82BBC33629C679B1000C2053 /* editScreen */ = {
+			isa = PBXGroup;
+			children = (
+				82BBC33029C67938000C2053 /* editCourse.swift */,
+				82BBC33229C6793F000C2053 /* editTask.swift */,
+			);
+			path = editScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,11 +336,15 @@
 				82BBC32629C5BF7D000C2053 /* courseDictionary.swift in Sources */,
 				82BBC31D29C5B702000C2053 /* myCourses.swift in Sources */,
 				82BBC31B29C5B6E7000C2053 /* homeScreen.swift in Sources */,
+				82BBC32D29C678F2000C2053 /* newCourse.swift in Sources */,
+				82BBC33329C6793F000C2053 /* editTask.swift in Sources */,
 				82BBC32829C5BF85000C2053 /* taskDictionary.swift in Sources */,
+				82BBC32F29C67922000C2053 /* newTask.swift in Sources */,
 				82BBC2F329C134EA000C2053 /* loginScreen.swift in Sources */,
 				82BBC2F129C134EA000C2053 /* CSE335Project1Phase1App.swift in Sources */,
 				82BBC32229C5BF19000C2053 /* courseRecord.swift in Sources */,
 				82BBC32A29C5D151000C2053 /* taskDetails.swift in Sources */,
+				82BBC33129C67938000C2053 /* editCourse.swift in Sources */,
 				82BBC32429C5BF25000C2053 /* taskRecord.swift in Sources */,
 				82BBC31F29C5B71D000C2053 /* courseDetails.swift in Sources */,
 			);

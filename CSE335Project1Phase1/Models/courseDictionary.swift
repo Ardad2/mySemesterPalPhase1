@@ -28,7 +28,7 @@ class courseDictionary: ObservableObject
     
     //ADD A COURSE
     
-    func add_course( _ givenClassName:String, _ givenRoomName:String, _ givenDays:[Int], _ givenStartTime:Int, _ givenEndTime: Int)
+    func add_course( _ givenClassName:String, _ givenRoomName:String, _ givenDays:[Int], _ givenStartTime:Date, _ givenEndTime: Date)
     {
         list.append(courseRecord(className:givenClassName, roomName:givenRoomName, days:givenDays, startTime:givenStartTime, endTime:givenEndTime));
         
@@ -44,6 +44,6 @@ class courseDictionary: ObservableObject
                 return courses;
             }
         }
-        return courseRecord(className: "F", roomName: "F", days: [0,0,0,0,0,0,0], startTime: 31, endTime: 42);
+        return courseRecord(className: "F", roomName: "F", days: [0,0,0,0,0,0,0], startTime: Calendar.current.date(byAdding: .hour, value: +1, to: Date())!, endTime: Calendar.current.date(byAdding: .hour, value: +2, to: Date())!);
     }
 }

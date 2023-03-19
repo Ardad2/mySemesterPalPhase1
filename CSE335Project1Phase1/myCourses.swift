@@ -47,6 +47,39 @@ struct myCourses: View {
                                     {
                                         HStack {
                                             Text(datum.get_class_name());
+                                            Text(datum.get_room_name());
+                                            Text(datum.get_start_time_string() + " to " + datum.get_end_time_string());
+                                            HStack{
+                                                var days = datum.get_days();
+                                                if (days[0] == 1)
+                                                {
+                                                    Text("M")
+                                                }
+                                                if (days[1] == 1)
+                                                {
+                                                    Text("T")
+                                                }
+                                                if (days[2] == 1)
+                                                {
+                                                    Text("W")
+                                                }
+                                                if (days[3] == 1)
+                                                {
+                                                    Text("Th")
+                                                }
+                                                if (days[4] == 1)
+                                                {
+                                                    Text("F")
+                                                }
+                                                if (days[5] == 1)
+                                                {
+                                                    Text("Sa")
+                                                }
+                                                if (days[6] == 1)
+                                                {
+                                                    Text("Su")
+                                                }
+                                            }
                                             Spacer();
                                         }
                                     }
