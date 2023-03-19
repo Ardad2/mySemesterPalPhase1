@@ -7,14 +7,7 @@
 
 import Foundation
 
-func isSameDay(date1: Date, date2: Date) -> Bool {
-    let diff = Calendar.current.dateComponents([.day], from: date1, to: date2)
-    if diff.day == 0 {
-        return true
-    } else {
-        return false
-    }
-}
+
 
 class taskDictionary: ObservableObject
 {
@@ -33,7 +26,14 @@ class taskDictionary: ObservableObject
      var dueTime:Int;
      */
     
-
+    func isSameDay(date1: Date, date2: Date) -> Bool {
+        let diff = Calendar.current.dateComponents([.day], from: date1, to: date2)
+        if diff.day == 0 {
+            return true
+        } else {
+            return false
+        }
+    }
     
     //ADD A COURSE
     

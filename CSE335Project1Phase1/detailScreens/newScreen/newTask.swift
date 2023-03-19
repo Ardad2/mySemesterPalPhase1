@@ -15,69 +15,77 @@ struct newTask: View {
     
     
     
-    @StateObject var courseData:courseDictionary = courseDictionary();
-    @StateObject var taskData:taskDictionary = taskDictionary();
+    @ObservedObject var courseData:courseDictionary = courseDictionary();
+    @ObservedObject var taskData:taskDictionary = taskDictionary();
     
     @State var newTaskName:String = ""
     @State var courseName:String;
     @State var newDueDate:Date = Calendar.current.date(byAdding: .hour, value: +1, to: Date())!
     @State var newTime:Date = Calendar.current.date(byAdding: .hour, value: +1, to: Date())!
+    @State var message:String = ""
+
+    
     
     
     
     var body: some View {
-        VStack(){
-            HStack {
-                NavigationLink(
-                    destination: homeScreen(courseData: courseData, taskData: taskData
-                                           ),
-                    label: {
-                        Text("Home")
-                    }).buttonStyle(.borderedProminent)
-                    .navigationTitle("Home")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarHidden(true)
-                NavigationLink(
-                    destination: courseDetails(courseName: self.courseName, courseData: courseData, taskData: taskData
-                                              ),
-                    label: {
-                        Text("Go Back to Course")
-                    }).buttonStyle(.borderedProminent)
-                    .navigationTitle("Home")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarHidden(true)
-                
-            }
+        NavigationView {
             VStack(){
-                
-                HStack() {
-                    Text("Task Name: ")
-                    TextField("Enter the course name", text: $newTaskName)
+                HStack {
+                    NavigationLink(
+                        destination: homeScreen(courseData: courseData, taskData: taskData
+                                               ),
+                        label: {
+                            Text("Home")
+                        }).buttonStyle(.borderedProminent)
+                        .navigationTitle("Home")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarHidden(true)
+                    NavigationLink(
+                        destination: courseDetails(courseName: courseName, courseData: courseData, taskData: taskData
+                                                  ),
+                        label: {
+                            Text("Go Back to Course")
+                        }).buttonStyle(.borderedProminent)
+                        .navigationTitle("Home")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarHidden(true)
                     
-                }
-                HStack() {
-                    Text("Course: ")
-                    Text("\(courseName)")
-                }
-                HStack() {
-                    Text("Timings")
-                    HStack() {
-                        DatePicker("Due Date", selection: $newDueDate );
-                        
-                    }
                 }
                 VStack(){
+                    Text("Create New Task")
+                    Text("\(message)")
                     
-                    Button(action: {
+                    HStack() {
+                        Text("Task Name: ")
+                        TextField("Enter the task name", text: $newTaskName)
                         
-                        taskData.add_task(newTaskName, courseName, newDueDate)
-                    }) {
-                        
-                        Text("Submit")
                     }
-                    
+                    HStack() {
+                        Text("Course: ")
+                        Text("\(courseName)")
+                    }
+                    HStack() {
+                        Text("Timings")
+                        HStack() {
+                            DatePicker("Due Date", selection: $newDueDate );
+                            
+                        }
+                    }
+                    VStack(){
+                        
+                        Button(action: {
+                            
+                            taskData.add_task(newTaskName, courseName, newDueDate)
+                            message = "Succesfully added task \(newTaskName)"
+                        }) {
+                            
+                            Text("Submit")
+                        }
+                        
+                    }
                 }
             }
-        }
+        }.navigationBarHidden(true)
     }
 }

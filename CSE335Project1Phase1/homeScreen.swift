@@ -13,8 +13,8 @@ struct homeScreen: View {
     @State private var enteredUsername: String = ""
     @State private var enteredPassword: String = ""
     
-    @StateObject var courseData:courseDictionary = courseDictionary();
-    @StateObject var taskData:taskDictionary = taskDictionary();
+    @ObservedObject var courseData:courseDictionary = courseDictionary();
+    @ObservedObject var taskData:taskDictionary = taskDictionary();
 
     
     var body: some View {
@@ -24,7 +24,7 @@ struct homeScreen: View {
         VStack {
             HStack {
                 NavigationLink(
-                    destination: myCourses(courseData: courseData, taskData: taskData
+                    destination: homeScreen(courseData: courseData, taskData: taskData
                     ),
                     label: {
                         Text("John")
@@ -42,7 +42,7 @@ struct homeScreen: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 NavigationLink(
-                    destination: myCourses(courseData: courseData, taskData: taskData
+                    destination: homeScreen(courseData: courseData, taskData: taskData
                     ),
                     label: {
                         Text("Settings")

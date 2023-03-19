@@ -18,7 +18,7 @@ struct loginScreen: View {
     var body: some View {
         NavigationView {
             VStack {
-                Button(action: {
+                /* Button(action: {
                     
 
 
@@ -36,7 +36,7 @@ struct loginScreen: View {
                     
                 }) {
                     Text("Test Input")
-                }
+                } */
                     VStack {
                         TextField("Enter username", text: $enteredUsername)
                         TextField("Enter password", text: $enteredPassword)
@@ -54,8 +54,8 @@ struct loginScreen: View {
                         
                         Text("Don't have an Account?").frame(maxWidth: .infinity, alignment: .trailing)
                         NavigationLink(
-                            destination: loginScreen( courseData: courseData
-                            ),
+                            destination: homeScreen(courseData: courseData, taskData: taskData
+                                                   ),
                             label: {
                                 Text("Register")
                             }).buttonStyle(.borderedProminent)

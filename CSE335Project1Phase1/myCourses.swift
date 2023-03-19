@@ -13,8 +13,8 @@ struct myCourses: View {
     @State private var enteredUsername: String = ""
     @State private var enteredPassword: String = ""
     
-    @StateObject var courseData:courseDictionary = courseDictionary();
-    @StateObject var taskData:taskDictionary = taskDictionary();
+    @ObservedObject var courseData:courseDictionary = courseDictionary();
+    @ObservedObject var taskData:taskDictionary = taskDictionary();
 
     
     var body: some View {
@@ -34,8 +34,29 @@ struct myCourses: View {
                     .navigationBarHidden(true)
 
             }
+            
+            /*
+             
+             @StateObject var courseData:courseDictionary = courseDictionary();
+             @StateObject var taskData:taskDictionary = taskDictionary();
+             
+             @State var newCourseName:String = ""
+             @State var newRoomName:String = ""
+             @State var startTime:Date = Calendar.current.date(byAdding: .hour, value: +1, to: Date())!
+             @State var endTime:Date = Calendar.current.date(byAdding: .hour, value: +1, to: Date())!
+             @State var days = [0,0,0,0,0,0,0]
+             
+             */
             VStack {
                 Text("My Courses")
+                NavigationLink(
+                    destination: newCourse(courseData: courseData, taskData: taskData),
+                    label: {
+                        Text("Add a New Course")
+                    }).buttonStyle(.borderedProminent)
+                    .navigationTitle("Home")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarHidden(true)
 
                     VStack {
                         
