@@ -68,6 +68,9 @@ class taskDictionary: ObservableObject
                 tasks.change_task_class(newClassName: newClassName);
             }
         }
+        list = list.sorted { (lhs, rhs) in
+            return lhs.get_due_date() < rhs.get_due_date()
+        }
     }
     
     func edit_task( _ givenTaskName:String, _ newTaskName:String, _ newDueDate:Date)
@@ -79,6 +82,21 @@ class taskDictionary: ObservableObject
                 task.change_task(newTaskName:newTaskName, newDueDate: newDueDate)
             }
         }
+        list = list.sorted { (lhs, rhs) in
+            return lhs.get_due_date() < rhs.get_due_date()
+        }
+    }
+    
+    func delete_task(_ givenTaskName: String, _ givenCourseName: String)
+    {
+        let list = list.filter {($0.get_task_name() != givenTaskName) && ($0.get_class_name() != givenCourseName)}
+        
+        
+    }
+    
+    func delete_course_tasks(_ givenCourseName: String)
+    {
+        let list = list.filter {($0.get_class_name() != givenCourseName)}
     }
 
 }
