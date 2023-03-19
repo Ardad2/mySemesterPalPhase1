@@ -25,6 +25,13 @@ struct newCourse: View {
     @State var days = [0,0,0,0,0,0,0]
     
     @State private var isOn = false
+    @State private var onMonday = false;
+    @State private var onTuesday = false;
+    @State private var onWednesday = false;
+    @State private var onThursday = false;
+    @State private var onFriday = false;
+    @State private var onSaturday = false;
+    @State private var onSunday = false;
 
     
     var body: some View {
@@ -50,36 +57,75 @@ struct newCourse: View {
                     .navigationBarHidden(true)
 
             }
-        VStack(){
-            
-            HStack() {
-                Text("Course Name: ")
-                TextField("Enter the course name", text: $newCourseName)
+            VStack(){
                 
-            }
-            HStack() {
-                Text("Course Location Name: ")
-                TextField("Enter the course name", text: $newRoomName)
-            }
-            HStack() {
-                Text("Timings")
                 HStack() {
-                    DatePicker("Start Time", selection: $startTime, displayedComponents: .hourAndMinute);
-                    DatePicker("End Time", selection: $endTime, displayedComponents: .hourAndMinute);
-
+                    Text("Course Name: ")
+                    TextField("Enter the course name", text: $newCourseName)
+                    
+                }
+                HStack() {
+                    Text("Course Location Name: ")
+                    TextField("Enter the course name", text: $newRoomName)
+                }
+                HStack() {
+                    Text("Timings")
+                    HStack() {
+                        DatePicker("Start Time", selection: $startTime, displayedComponents: .hourAndMinute);
+                        DatePicker("End Time", selection: $endTime, displayedComponents: .hourAndMinute);
+                        
+                    }
+                }
+                VStack(){
+                    HStack() {
+                        Toggle(isOn: $onMonday)
+                        {
+                            Text("M")
+                        }
+                        Toggle(isOn: $onTuesday)
+                        {
+                            Text("T")
+                        }
+                        Toggle(isOn: $onWednesday)
+                        {
+                            Text("W")
+                        }
+                        Toggle(isOn: $onThursday)
+                        {
+                            Text("Th")
+                        }
+                    }
+                HStack() {
+                    Toggle(isOn: $onFriday)
+                    {
+                        Text("F")
+                    }
+                    Toggle(isOn: $onSaturday)
+                    {
+                        Text("Sa")
+                    }
+                    Toggle(isOn: $onSunday)
+                    {
+                        Text("Su")
+                    }
+                    
                 }
             }
-            HStack() {
-                Toggle(isOn: $isOn)
-                {
-                    Text("Test")
-                }
                 
-            }
+                Button(action: {
+                    courseData.add_course(newCourseName, newRoomName, days, startTime, endTime)
+                }) {
+                    
+                    Text("Submit")
+                }
 
         }
     }
     }
 }
 
+
+
+
+//courseData.add_course(newCourseName, newRoomName, days, startTime, endTime)
 
