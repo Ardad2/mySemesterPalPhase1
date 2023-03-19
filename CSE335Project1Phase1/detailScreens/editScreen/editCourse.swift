@@ -21,8 +21,8 @@ struct editCourse: View {
     @State var prevCourseName:String;
     @State var newCourseName:String;
     @State var newRoomName:String;
-    @State var startTime:Date;
-    @State var endTime:Date;
+    @State var newStartTime:Date;
+    @State var newEndTime:Date;
     @State var days:[Int];
     
     @State private var isOn = false
@@ -72,8 +72,8 @@ struct editCourse: View {
                 HStack() {
                     Text("Timings")
                     HStack() {
-                        DatePicker("Start Time", selection: $startTime, displayedComponents: .hourAndMinute);
-                        DatePicker("End Time", selection: $endTime, displayedComponents: .hourAndMinute);
+                        DatePicker("Start Time", selection: $newStartTime, displayedComponents: .hourAndMinute);
+                        DatePicker("End Time", selection: $newEndTime, displayedComponents: .hourAndMinute);
                         
                     }
                 }
@@ -143,7 +143,8 @@ struct editCourse: View {
                         days[6] = 1;
                     }
                     
-                    courseData.edit_course(prevCourseName, newCourseName, newRoomName, days, startTime, endTime)
+                    courseData.edit_course(prevCourseName, newCourseName, newRoomName, days, newStartTime, newEndTime)
+                    taskData.update_task_class(prevCourseName, newCourseName)
                 }) {
                     
                     Text("Submit")

@@ -58,5 +58,16 @@ class taskDictionary: ObservableObject
         }
         return taskRecord(taskName: "F", className: "F", dueDate: Calendar.current.date(byAdding: .hour, value: +1, to: Date())!);
     }
+    
+    func update_task_class(_ oldClassName:String, _ newClassName:String)
+    {
+        for tasks in list
+        {
+            if (tasks.get_class_name() == oldClassName)
+            {
+                tasks.change_task_class(newClassName: newClassName);
+            }
+        }
+    }
 
 }

@@ -35,9 +35,9 @@ struct courseDetails: View {
             }
         VStack(){
             NavigationLink(
-                destination: editCourse(courseData: courseData, taskData: taskData, prevCourseName: courseName, newCourseName: courseName, newRoomName: courseData.get_course(courseName).get_room_name(), startTime: courseData.get_course(courseName).get_start_time(), endTime: courseData.get_course(courseName).get_end_time(), days: courseData.get_course(courseName).get_days() ),
+                destination: editCourse(courseData: courseData, taskData: taskData, prevCourseName: courseName, newCourseName: courseName, newRoomName: courseData.get_course(courseName).get_room_name(), newStartTime: courseData.get_course(courseName).get_start_time(), newEndTime: courseData.get_course(courseName).get_end_time(), days: courseData.get_course(courseName).get_days() ),
                 label: {
-                    Text("Add New Couurse")
+                    Text("Edit Course")
                 }).buttonStyle(.borderedProminent)
                 .navigationTitle("Home")
                 .navigationBarTitleDisplayMode(.inline)

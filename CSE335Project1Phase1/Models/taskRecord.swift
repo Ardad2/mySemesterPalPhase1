@@ -30,6 +30,10 @@ class taskRecord: Identifiable
         self.dueDate = newDueDate;
     }
     
+    func change_task_class(newClassName:String)
+    {
+        self.className = newClassName;
+    }
     func toggle_mark()
     {
         if (self.mark == false)
