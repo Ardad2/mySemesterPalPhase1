@@ -65,6 +65,10 @@ struct taskDetails: View {
                 .navigationTitle("Home")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(true)
+            Button(action: {
+                taskData.delete_task(taskName, courseName);
+                
+            }, label:{Text("Delete Task")})
         }
     }
     }
