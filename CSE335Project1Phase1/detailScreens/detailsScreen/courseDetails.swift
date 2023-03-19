@@ -42,6 +42,17 @@ struct courseDetails: View {
                 .navigationTitle("Home")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(true)
+            
+            Button(action: {
+                taskData.delete_course_tasks(courseName);
+                courseData.delete_course(courseName);
+                
+            }, label:{Text("Delete Course")})
+
+            //
+            
+            
+            //
             NavigationLink(
                 destination: newTask(courseData: courseData, taskData: taskData, courseName: self.courseName),
                 label: {

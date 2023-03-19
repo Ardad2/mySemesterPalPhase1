@@ -89,14 +89,15 @@ class taskDictionary: ObservableObject
     
     func delete_task(_ givenTaskName: String, _ givenCourseName: String)
     {
-        let list = list.filter {($0.get_task_name() != givenTaskName) && ($0.get_class_name() != givenCourseName)}
+         list = list.filter {($0.get_task_name() != givenTaskName) && ($0.get_class_name() != givenCourseName)}
         
         
     }
     
     func delete_course_tasks(_ givenCourseName: String)
     {
-        let list = list.filter {($0.get_class_name() != givenCourseName)}
+        print("Deleted Course tasks!")
+         list = list.filter {($0.get_class_name() != givenCourseName)}
     }
 
 }

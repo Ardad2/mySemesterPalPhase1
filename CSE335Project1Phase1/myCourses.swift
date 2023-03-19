@@ -38,14 +38,7 @@ struct myCourses: View {
                 Text("My Courses")
 
                     VStack {
-                        NavigationLink(
-                            destination: newCourse(courseData: courseData, taskData: taskData),
-                            label: {
-                                Text("Add New Couurse")
-                            }).buttonStyle(.borderedProminent)
-                            .navigationTitle("Home")
-                            .navigationBarTitleDisplayMode(.inline)
-                            .navigationBarHidden(true)
+                        
                         List {
                             Section(header: ListHeader1())
                             {
